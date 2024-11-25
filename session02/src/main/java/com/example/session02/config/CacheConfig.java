@@ -1,2 +1,11 @@
-package com.example.session02.config;public class CacheConfig {
+package com.example.session02.config;
+
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableCaching
+public class CacheConfig {
+
+
 }
