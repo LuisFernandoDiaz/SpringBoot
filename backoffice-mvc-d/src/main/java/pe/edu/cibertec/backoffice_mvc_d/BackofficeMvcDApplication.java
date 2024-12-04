@@ -8,6 +8,7 @@ public class BackofficeMvcDApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackofficeMvcDApplication.class, args);
+		System.out.printf("Hello and welcome!");
 	}
 
 }

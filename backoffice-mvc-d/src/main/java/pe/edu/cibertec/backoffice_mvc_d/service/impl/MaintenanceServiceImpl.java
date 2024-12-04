@@ -19,8 +19,10 @@ public class MaintenanceServiceImpl implements MaintenanceService {
     @Autowired
     FilmRepository filmRepository;
 
+
     @Override
     public List<FilmDto> ListarFilms() {
+
         List<FilmDto> films = new ArrayList<FilmDto>();
         Iterable<Film> iterable = filmRepository.findAll();
         iterable.forEach(film -> {
@@ -28,12 +30,13 @@ public class MaintenanceServiceImpl implements MaintenanceService {
             FilmDto filmDto = new FilmDto(film.getFilmId(),
                     film.getTitle(),
                     film.getLanguage().getName(),
-                    film.getRentalRate());
+                    film.getSpecialFeatures());
             films.add(filmDto);
 
         });
         return films;
     }
+
 
 
     @Override
@@ -77,6 +80,18 @@ public class MaintenanceServiceImpl implements MaintenanceService {
             return true;
         }).orElse(false);
     }
+
+    @Override
+    public void eliminarFilm(Integer id) {
+        filmRepository.deleteById(id);
+    }
+
+    @Override
+    public Film agregarFilm(Film film) {
+    return filmRepository.save(film);
+    }
+
+
 
 
 }

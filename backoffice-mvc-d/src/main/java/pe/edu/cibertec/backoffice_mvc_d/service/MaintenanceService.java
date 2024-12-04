@@ -14,4 +14,9 @@ public interface MaintenanceService {
 
     Boolean editarFilm(FilmDetailDto  filmDetailDto);
 
+    public void eliminarFilm( Integer id);
+
+    Film agregarFilm(Film  film);
+
+
 }
